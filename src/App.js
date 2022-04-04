@@ -1,24 +1,23 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import {Canvas, useFrame} from '@react-three/fiber'
+import IP13PROOR from './components/IP13PROOR.js'
+import {OrbitControls} from '@react-three/drei'
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <div style={{height: "100vh", display: 'flex', justifyContent: "center", alignItems: "center"}}>
+      <div style={{height: "80%", width: "50%", backgroundColor: "black"}}>
+      <Canvas>
+        <OrbitControls/>
+        <directionalLight intensity={0.5} />
+        <ambientLight intensity={2}/>
+
+        <IP13PROOR/>
+      </Canvas>
+      </div>
+      </div>
+    </>
   );
 }
 
